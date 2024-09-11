@@ -1,0 +1,155 @@
+*{
+    font-family: 'K2D'
+}
+
+.taskCard{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #80ABFF;
+    border-radius: 5px;
+    padding: 0.2vw;
+    color: white;
+    user-select: none;
+
+    transition: 0.3s ease-in-out;
+
+}
+
+
+
+
+#pauseBtn{
+    display: none;
+}
+
+#playBtn{
+    display: block;
+}
+
+
+
+/* Desktop */
+@media screen and (min-width:1024px) {
+
+    .taskCard{
+        width: 30vw;
+        margin-top: 1vw;
+
+    }
+
+    #textContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    h2{
+        font-size: 1.2vw;
+        margin-left: 1vw;
+        font-weight: bolder;
+    }
+
+    #timeLeft{
+        margin-left: auto;
+        font-size: 18px;
+        margin-right: 1vw;
+    }
+
+    .timeControler{
+        width: 7%;
+    }
+
+    #pauseBtn{
+        margin-right: 1vw;
+    }
+    
+    #playBtn{
+        margin-right: 1vw;
+    }
+
+}
+
+/* Tablet */
+@media screen and (min-width:768px) and (max-width:1023px){
+    .taskCard{
+        width: 50vw;
+        margin-top: 2vw;
+
+    }
+
+    #textContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    h2{
+        font-size: 3vw;
+        margin-left: 1.5vw;
+        font-weight: bolder;
+    }
+
+    #timeLeft{
+        margin-left: auto;
+        font-size: 18px;
+        margin-right: 1vw;
+    }
+
+    .timeControler{
+        width: 8%;
+    }
+
+    #pauseBtn{
+        margin-right: 1vw;
+    }
+    
+    #playBtn{
+        margin-right: 1vw;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:767px) {
+
+    .taskCard{
+        margin-top: 4vw;
+    }
+
+    #textContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2{
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        margin-left: 2vw;
+        font-weight: bolder;
+    }
+
+    #timeLeft{
+        margin-bottom: 2vw;
+        margin-left: 4vw;
+        font-size: 18px;
+    }
+
+    .timeControler{
+        width: 10%;
+    }
+
+    #pauseBtn{
+        margin-right: 7vw;
+    }
+    
+    #playBtn{
+        margin-right: 7vw;
+    }
+
+    
+}

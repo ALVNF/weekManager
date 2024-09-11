@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=K2D' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+
+    <script src="./webcomponents/taskCard/taskCard.js"></script>
+    <script src="./webcomponents/dayCard/dayCard.js"></script>
+    <script src="./webcomponents/taskList/taskList.js"></script>
+    <script src="./webcomponents/taskForm/taskForm.js"></script>
+    <script src="./webcomponents/contextMenu/contextMenu.js"></script>
+</head>
+<body>
+    <!-- <task-card></task-card> -->
+    <!-- <day-card></day-card> -->
+    <!-- <task-list></task-list> -->
+    <!-- <task-form></task-form> -->
+    <!--
+        1 semana tiene 168h
+        Cuantas horas me gustaría dormir
+        A que hora me gustaria levantarme -> Se puede calcular restando con ls horas que me gustaría dormir y el paso siguiente
+        A que hora me gustaría ir a dormir -> Se puede calcular sumando con las horas que me gustaría dormir y el paso anterior
+        Hay que restar las horas que quiero dormir a la semana con las horas totales semanales
+    -->
+
+    <!-- 
+        Listado de tareas que quiero hacer a lo largo de la semana
+        Tendré que colocar el numero de horas a cada tarea, se deben de ajustar las horas a cada día,
+        ya que habrá días que en las que haré más cosas que otros, por ejemplo, si los lunes no voy a correr
+        tendré ese tiempo libre y viceversa.
+    -->
+
+    <!-- 
+        Mostrar en una tabla los días con las horas totales y si sobra o falta alguna hora para completar el
+        número total de horas del día
+    -->
+    <context-menu id="contextMenu"></context-menu>
+    <main id="mainDesktopTablet" >
+            
+        <div class="leftSide">
+            <div class="sleepHoursContainer">
+                <h1>Horas de Sueño</h1>
+                <div class="questions">
+                    <div id="questionsLeft">
+                        <div class="questionContainer">
+                            <label for="sleepHours">Horas durmiendo</label>
+                            <input type="number" id="sleepHours" name="sleepHours" value="8" min="0" max="24" placeholder="3" onchange="calculateWakeUp()">
+                        </div>
+                    
+                        <div class="questionContainer">
+                            <label for="sleepTime">Me voy a dormir a las:</label>
+                            <input type="time" id="sleepTime" name="sleepTime" value="00:00" onchange="calculateWakeUp()">
+                        </div>
+                    </div>
+                
+                    <div class="questionContainer">
+                        <label for="wakeHours">Despertaré a las:</label>
+                        <input type="time" id="wakeHours" name="wakeHours" >
+                    </div>
+                </div>
+            </div>
+            <h1>Agregar Tarea</h1>
+            <task-form></task-form>
+        </div>
+        <div class="rightSide">
+            <h1>Listado Tareas</h1>
+            <task-list id="taskList"></task-list>
+        </div>
+
+    </main>
+
+    <main id="mainMobile">
+        <div id="addTaskBtn" onclick="openTaskForm()">
+            <img src="./assets/add.svg" id="addImg" alt="Agregar tarea">
+        </div>
+        <h1>Listado tareas</h1>
+        <task-list></task-list>
+        <div class="dialogContainer" id="dialogContainer">
+            <div class="sleepHoursContainer">
+                <h1>Horas de Sueño</h1>
+                <div class="questions">
+                    <div id="questionsLeft">
+                        <div class="questionContainer">
+                            <label for="sleepHours">Horas durmiendo</label>
+                            <input type="number" id="sleepHours" name="sleepHours" min="0" max="24" placeholder="3">
+                        </div>
+                    
+                        <div class="questionContainer">
+                            <label for="sleepHours">Me voy a dormir a las:</label>
+                            <input type="time" id="sleepHours" name="sleepHours">
+                        </div>
+                    </div>
+                
+                    <div class="questionContainer">
+                        <label for="sleepHours">Despertaré a las:</label>
+                        <input type="time" id="sleepHours" name="sleepHours" disabled>
+                    </div>
+                </div>
+            </div>
+            <h1>Agregar Tarea</h1>
+            <task-form></task-form>
+        </div>
+    </main>
+    
+    <footer>
+        <div id="footerTitle">
+            <h1>Estado de horas asignadas</h1>
+            <h3>Máximo de horas al día: <label id="maxHours">16</label></h3>
+        </div>
+        <div class="daysList" id="daysList">
+            <day-card day="Lunes" id="L"></day-card>
+            <day-card day="Martes" id="M"></day-card>
+            <day-card day="Miércoles" id="X"></day-card>
+            <day-card day="Jueves" id="J"></day-card>
+            <day-card day="Viernes" id="V"></day-card>
+            <day-card day="Sábado" id="S"></day-card>
+            <day-card day="Domingo" id="D"></day-card>
+        </div>
+    </footer>
+</body>
+
+<script src="./main.js"></script>
+</html>

@@ -1,0 +1,110 @@
+*{
+    font-family: 'K2D'
+}
+
+.dayCard{
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    
+    border-radius: 5px;
+    background-color: #C8FFD4;
+    user-select: none;
+
+}
+
+
+h2{
+    color: #434343;
+}
+
+#hoursRemaining{
+    color:#434343;
+}
+
+
+
+/* Desktop */
+@media screen and (min-width:1024px) {
+    .dayCard{
+        width: 15vw;
+        margin-right: 20px;
+    }
+
+    h2{
+        font-size: 1.5vw;
+        margin-left: 1vw;
+        margin-top: 0.5vw;
+        margin-bottom: 0.3vw;
+        font-weight: bolder;
+    }
+
+    #hoursRemaining{
+        font-size: 1vw;
+        margin-left: 1vw;
+        margin-bottom: 0.5vw;
+        font-weight: lighter;
+
+    }
+
+    .time{
+        font-weight: bold;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width:768px) and (max-width:1023px){
+    .dayCard{
+        width: 28vw;
+        padding: 1vw;
+        margin-right: 15px;
+    }
+
+    h2{
+        font-size: 3.5vw;
+        margin-left: 1vw;
+        margin-top: 0vw;
+        margin-bottom: 0.5vw;
+        font-weight: bolder;
+    }
+
+    #hoursRemaining{
+        font-size: 2vw;
+        margin-left: 1vw;
+        font-weight: lighter;
+    }
+
+    .time{
+        font-weight: bold;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:767px) {
+    .dayCard{
+        width: 60vw;
+        padding: 1vw;
+        margin-right: 15px;
+    }
+
+    h2{
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        margin-left: 4vw;
+        font-weight: bolder;
+    }
+
+    #hoursRemaining{
+        margin-left: 5vw;
+        margin-bottom: 3vw;
+        margin-bottom: 2vw;
+        font-weight: lighter;
+        
+    }
+
+    .time{
+        font-weight: bold;
+    }
+    
+}
